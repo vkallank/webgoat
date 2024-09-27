@@ -30,8 +30,10 @@ jobs:
         DETECT_PROJECT_NAME: ${{ github.event.repository.name }}
       with:
         # blackduck_scan_full: false
-        blackduck_url: ${{ vars.BLACKDUCK_URL }}
-        blackduck_token: ${{ secrets.BLACKDUCK_API_TOKEN }}
+        #blackduck_url: ${{ vars.BLACKDUCK_URL }}
+        blackduck_url: https://testing.blackduck.synopsys.com
+        #blackduck_token: ${{ secrets.BLACKDUCK_API_TOKEN }}
+        blackduck_token: MmUxMTA5ZWQtYWE0OC00N2UzLWIwYWQtYjJjMGRiNjNiNDk4OjFkODUzY2EzLThmZGUtNGYyMC1hZWNmLTVlZGMxMmZhZWZlMg==
         blackduck_scan_failure_severities: 'BLOCKER'
         blackduck_fixpr_enabled: true
         blackduck_prComment_enabled: true
