@@ -30,8 +30,8 @@ jobs:
         DETECT_PROJECT_NAME: ${{ github.event.repository.name }}
       with:
         # blackduck_scan_full: false
-        blackduck_url: ${{ BD.BLACKDUCK_URL }}
-        blackduck_token: ${{ BD.BLACKDUCK_API_TOKEN }}
+        blackduck_url: ${{ vars.BLACKDUCK_URL }}
+        blackduck_token: ${{ secrets.BLACKDUCK_API_TOKEN }}
         blackduck_scan_failure_severities: 'BLOCKER'
         blackduck_fixpr_enabled: true
         blackduck_prComment_enabled: true
