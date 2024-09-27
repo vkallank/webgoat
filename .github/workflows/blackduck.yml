@@ -1,7 +1,6 @@
 # example workflow for Black Duck scans using the Synopsys Action
 # https://github.com/marketplace/actions/synopsys-action
 name: blackduck
-environment: BD
 on:
   push:
     branches: [ main, master, develop, stage, release ]
@@ -31,8 +30,8 @@ jobs:
         DETECT_PROJECT_NAME: ${{ github.event.repository.name }}
       with:
         # blackduck_scan_full: false
-        blackduck_url: ${{ vars.BLACKDUCK_URL }}
-        blackduck_token: ${{ secrets.BLACKDUCK_API_TOKEN }}
+        blackduck_url: ${{ BD.vars.BLACKDUCK_URL }}
+        blackduck_token: ${{ BD.secrets.BLACKDUCK_API_TOKEN }}
         blackduck_scan_failure_severities: 'BLOCKER'
         blackduck_fixpr_enabled: true
         blackduck_prComment_enabled: true
